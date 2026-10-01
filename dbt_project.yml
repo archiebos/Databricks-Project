@@ -36,7 +36,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
+  Databricks-Project:          # must match the "name:" at the top of this file
+    +persist_docs:
+      relation: true
+      columns: true
+    silver:
+      +materialized: table
+    gold:
       +materialized: table
