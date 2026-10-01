@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: workspace
+    schema: default
+    tables:
+      - name: bronze_bike_events
+        description: "Raw rides loaded from CSV by the Databricks bronze job."
